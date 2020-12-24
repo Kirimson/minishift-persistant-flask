@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 application = Flask(__name__)
 
 def read_file(path):
@@ -13,7 +13,7 @@ def read_file(path):
 @application.route('/')
 def hello_world():
     text =  read_file('storage/hello.txt')
-    return text
+    return render_template('hello.html', body=text)
 
 if __name__ == "__main__":
     application.run()
