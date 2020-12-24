@@ -10,7 +10,7 @@ def read_file(path):
         text = "nothing found"
     return text
 
-@app.route('/')
+@application.route('/')
 def hello_world():
     text =  read_file('storage/hello.txt')
     return text
