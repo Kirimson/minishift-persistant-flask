@@ -3,8 +3,11 @@ app = Flask(__name__)
 
 def read_file(path):
     text = ""
-    with open(path, "r") as f:
-        text = f.read()
+    try:
+      with open(path, "r") as f:
+          text = f.read()
+    except:
+        text = "nothing found"
     return text
 
 @app.route('/')
