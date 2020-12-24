@@ -5,9 +5,10 @@ def read_file(path):
     text = ""
     try:
       with open(path, "r") as f:
-          text = f.read()
+          text = f.read().splitlines()
     except:
-        text = "nothing found"
+        text = ["nothing found"]
+    print(text)
     return text
 
 @application.route('/')
