@@ -1,5 +1,5 @@
 from flask import Flask
-app = Flask(__name__)
+application = Flask(__name__)
 
 def read_file(path):
     text = ""
@@ -14,3 +14,6 @@ def read_file(path):
 def hello_world():
     text =  read_file('storage/hello.txt')
     return text
+
+if __name__ == "__main__":
+    application.run()
